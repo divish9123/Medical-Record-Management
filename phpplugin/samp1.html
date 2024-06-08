@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    input[type="button"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+        background-color: #0056b3;
+    }
+
+    .error {
+        color: red;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <div id="createAccountForm">
+            <input type="text" id="createUsername" placeholder="Username">
+            <input type="password" id="createPassword" placeholder="Password">
+            <input type="button" value="Create Account" onclick="createAccount()">
+            <div id="createError" class="error"></div>
+        </div>
+        <p>Already have an account? <a href="samp2.html">Login here</a></p>
+    </div>
+
+    <script>
+        function createAccount() {
+            var username = document.getElementById('createUsername').value;
+            var password = document.getElementById('createPassword').value;
+
+            if (username && password) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                alert('Account created successfully!');
+                window.location.href = 'samp2.html';
+            } else {
+                document.getElementById('createError').innerText = 'Please enter both username and password';
+            }
+        }
+    </script>
+</body>
+</html>

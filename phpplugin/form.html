@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <link rel="stylesheet" href="style/form.css">
+    <script src="js/form.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- <div class="header">
+        <a href="#default" class="logo">DASK-2520T</a>
+        <div class="header-center">
+            <a class="title" href="#tasc">TASC</a>
+            <a href="#default">sample quotation</a>
+        </div>
+        <div class="header-right">
+            <a href="#home">Home</a>
+            <a href="form.html">Application</a>
+            <a href="signup.html">Sign up</a>
+            <a class="active"  href="login.html">Log in</a>
+        </div>
+
+    </div> -->
+    <div class="header">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">TASC</h2>
+            </div>
+    
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="login.html" target="_blank">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-box">
+        <label for="name">
+            <h1>Application</h1>
+        </label>
+        <form action="backend.php" class="app_form">
+
+            <!-- add Hi <NAME> let's start with application form (some statement including user's name)-->
+            <div class="input-box">
+                <label for="name"><i class="fa fa-user"></i></label>
+                <input type="text" name="name" id="name" placeholder="Name">
+            </div>
+
+
+            <div class="input-box">
+                <label for="phn"><i class="fa fa-phone"></i></label>
+                <input type="number" name="phn" id="phn" placeholder="Phone number">
+            </div>
+            <div class="input-box">
+                <label for="email"><i class="fa fa-envelope-o"></i></label>
+                <input type="email" name="Email" id="email" placeholder="Email ID"
+                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+            </div>
+            <div class="input-box">
+                <label for="uid"><i class="fa fa-circle-user"></i></label>
+                    <button onclick="generateUID()">Generate UID</button>
+                <input type="text" name="uid" id="uid" placeholder="User ID">
+            </div>
+            <div class="input-box">
+                <label for="myInput"><i class="fa fa-key"></i></label>
+                <input type="password" id="myInput" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    placeholder="Password" required>
+                <span class="eye" onclick="myFunction()">
+                    <i id="hide1" class="fa fa-eye"></i>
+                    <i id="hide2" class="fa fa-eye-slash"></i>
+                </span><br>
+            </div>
+            <button type="submit" class="sub-btn"><a href="login.html" target="_blank">Submit</a></button>
+        </form>
+    </div>
+</body>
+
+</html>
